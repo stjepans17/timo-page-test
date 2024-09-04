@@ -7,17 +7,26 @@ function App() {
     // const [deviceType, setDeviceType] = useState('PC');
 
     useEffect(() => {
+        const ua = navigator.userAgent || navigator.vendor;
+        const isInstagram = ua.indexOf("Instagram") > -1 ? true : false;
         const userAgent = navigator.userAgent;
         const link = "https://www.youtube.com/";
         const safariLink = `x-web-search://?${link}`;
-        if (
-            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-                userAgent
-            )
-        ) {
-            window.location.href = safariLink;
+
+        if (isInstagram) {
+            if (/iPad|iPhone|iPod/.test(ua)) {
+                window.location.href = safariLink;
+                return;
+            } else if (/android/i.test(userAgent)) {
+                window.location.href = "intent:https://youtube.com#Intent;end";
+                return;
+            } else {
+                window.location.href = link;
+                return;
+            }
         } else {
             window.location.href = link;
+            return;
         }
     }, []);
     return (
