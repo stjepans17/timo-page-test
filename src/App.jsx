@@ -31,7 +31,7 @@ function App() {
     }, []);
     return (
         <>
-            <div className="main"></div>
+            <div className="main-div"></div>
         </>
     );
 }
