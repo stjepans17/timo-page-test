@@ -13,17 +13,25 @@ function App() {
         const link = "https://www.onlyfans.com/";
         const safariLink = `x-web-search://?${link}`;
 
-        if (isInstagram) {
-            if (/iPad|iPhone|iPod/.test(ua)) {
-                window.location.href = safariLink;
-                return;
-            } else if (/android/i.test(userAgent)) {
-                window.location.href = "intent:https://onlyfans.com#Intent;end";
-                return;
-            } else {
-                window.location.href = link;
-                return;
-            }
+        // if (isInstagram) {
+        //     if (/iPad|iPhone|iPod/.test(ua)) {
+        //         window.location.href = safariLink;
+        //         return;
+        //     // } else if (/android/i.test(userAgent)) {
+        //     //     window.location.href = "https://onlyfans.com";
+        //     //     return;
+        //     // } else {
+        //     //     window.location.href = link;
+        //     //     return;
+        //     // }
+        // } else {
+        //     window.location.href = link;
+        //     return;
+        // }
+
+        if (/iPad|iPhone|iPod/.test(userAgent)) {
+            window.location.href = safariLink;
+            return;
         } else {
             window.location.href = link;
             return;
