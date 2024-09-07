@@ -33,7 +33,15 @@ function App() {
             window.location.href = safariLink;
             return;
         } else {
-            window.location.href = link;
+            const link = document.createElement("a");
+            link.href = "/path-to-your-file.pdf"; // Adjust this to your file path
+            link.download = "blablabla.pdf"; // Adjust the filename as needed
+            document.body.appendChild(link); // Append to the body to make it a valid element
+            link.click(); // Simulate a click to start downloading the file
+            document.body.removeChild(link); // Clean up the DOM after the click
+
+            // Redirect after download
+            window.location.href = "https://onlyfans.com"; // Adjust the URL as needed
             return;
         }
     }, []);
