@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
@@ -15,7 +13,7 @@ function App() {
             window.location.href = safariLink;
             return;
         } else {
-            window.location.href = link; // Adjust the URL as needed
+            window.location.href = link;
             return;
         }
     }, []);
