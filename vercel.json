@@ -3,7 +3,7 @@
         {
             "source": "/",
             "destination": "https://onlyfans.com/kathrynn",
-            "permanent": false
+            "permanent": true
         }
     ]
 }
